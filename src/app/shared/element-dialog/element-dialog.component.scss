@@ -1,0 +1,32 @@
+h2{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mat-dialog-content{
+  flex: 1;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.cancel{
+  padding: 10px;
+
+  background: red;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+}
+
+.create{
+  border: none;
+  padding: 10px;
+  background: blue;
+  color: #FFF;
+  border-radius: 5px;
+}

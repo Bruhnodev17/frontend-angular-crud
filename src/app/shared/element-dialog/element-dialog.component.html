@@ -1,0 +1,35 @@
+<h2 mat-dialog-title *ngIf="!isChange">Create Element</h2>
+<h2 mat-dialog-title *ngIf="isChange">Edit Element</h2>
+<mat-dialog-content>
+
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput [(ngModel)]="data.position">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="data.price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Validity</mat-label>
+    <input matInput [(ngModel)]="data.validity">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Perishable</mat-label>
+    <input matInput [(ngModel)]="data.perishable">
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions class="buttons">
+  <button mat-button class="cancel" (click)="onCancel()">Cancel</button>
+  <button mat-button class="create" *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  <button mat-button class="create" *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Edit</button>
+</mat-dialog-actions>
