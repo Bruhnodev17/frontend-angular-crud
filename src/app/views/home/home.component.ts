@@ -12,39 +12,50 @@ export interface PeriodicElement {
   price: number | string;
   validity: string | Date | number;
   perishable: boolean | string;
+  stock: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Caderno', price: `R$ ${55.99}`, validity: new Date(2025, 5, 15).toLocaleDateString('pt-BR'),
-    perishable:`${false}`
+  {
+    position: 1, name: 'Caderno', price: `R$ ${55.99}`, validity: new Date(2025, 5, 15).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 10
   },
-  { position: 2, name: 'Lápis', price: `R$ ${4.99}`, validity: new Date(2025, 2, 17).toLocaleDateString('pt-BR'),
-    perishable:`${false}`
+  {
+    position: 2, name: 'Lápis', price: `R$ ${4.99}`, validity: new Date(2025, 2, 17).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 50
   },
-  { position: 3, name: 'Biscoito', price: `R$ ${6.99}`, validity: new Date(2024, 8, 6).toLocaleDateString('pt-BR'),
-    perishable:`${true}`
+  {
+    position: 3, name: 'Biscoito', price: `R$ ${6.99}`, validity: new Date(2024, 8, 6).toLocaleDateString('pt-BR'),
+    perishable: `${true}`, stock: 33
   },
-  { position: 4, name: 'Pão', price: `R$ ${5.59}`, validity: new Date(2024, 4, 5).toLocaleDateString('pt-BR'),
-    perishable:`${true}`
+  {
+    position: 4, name: 'Pão', price: `R$ ${5.59}`, validity: new Date(2024, 4, 5).toLocaleDateString('pt-BR'),
+    perishable: `${true}`, stock: 200
   },
-  { position: 5, name: 'Bacon', price: `R$ ${10.89}`, validity: new Date(2024, 7, 19).toLocaleDateString('pt-BR'),
-    perishable:`${true}`
+  {
+    position: 5, name: 'Bacon', price: `R$ ${10.89}`, validity: new Date(2024, 7, 19).toLocaleDateString('pt-BR'),
+    perishable: `${true}`, stock: 20
   },
-  { position: 6, name: 'Lasanha', price: `R$ ${20.99}`, validity: new Date(2024, 9, 24).toLocaleDateString('pt-BR'),
-    perishable:`${true}`
+  {
+    position: 6, name: 'Lasanha', price: `R$ ${20.99}`, validity: new Date(2024, 9, 24).toLocaleDateString('pt-BR'),
+    perishable: `${true}`, stock: 25
   },
-  { position: 7, name: 'Panela', price: `R$ ${49.99}`, validity: new Date(2025, 1, 30).toLocaleDateString('pt-BR'),
-    perishable:`${false}`
+  {
+    position: 7, name: 'Panela', price: `R$ ${49.99}`, validity: new Date(2025, 1, 30).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 15
   },
-  { position: 8, name: 'Mesa', price: `R$ ${199.99}`, validity: new Date(2025, 12, 25).toLocaleDateString('pt-BR'),
-    perishable:`${false}`
+  {
+    position: 8, name: 'Mesa', price: `R$ ${199.99}`, validity: new Date(2025, 12, 25).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 12
   },
-  { position: 9, name: 'Celular', price: `R$ ${2199.99}`, validity: new Date(2025, 11, 22).toLocaleDateString('pt-BR'),
-    perishable:`${false}`
+  {
+    position: 9, name: 'Celular', price: `R$ ${2199.99}`, validity: new Date(2025, 11, 22).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 8
   },
-  { position: 10, name: 'Macarrão', price: `R$ ${5.99}`, validity: new Date(2024, 10, 5).toLocaleDateString('pt-BR'),
-    perishable: `${false}`
- },
+  {
+    position: 10, name: 'Macarrão', price: `R$ ${5.99}`, validity: new Date(2024, 10, 5).toLocaleDateString('pt-BR'),
+    perishable: `${false}`, stock: 40
+  },
 ];
 @Component({
   selector: 'app-home',
@@ -57,7 +68,7 @@ export class HomeComponent {
 
   @ViewChild(MatTable)
   table!: MatTable<any>;
-  displayedColumns: string[] = ['position', 'name', 'price', 'validity','perishable','actions'];
+  displayedColumns: string[] = ['position', 'name', 'price', 'validity', 'perishable', 'stock', 'actions'];
   dataSource = ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) { }
@@ -71,12 +82,14 @@ export class HomeComponent {
         price: "",
         validity: "",
         perishable: "?",
+        stock: ""
       } : {
         position: element.position,
         name: element.name,
         price: element.price,
         validity: element.validity,
         perishable: element.perishable,
+        stock: element.stock,
       }
     });
 
