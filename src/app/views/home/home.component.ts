@@ -16,76 +16,7 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1, name: 'Caderno', price: 55.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2025, 5, 15).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 10
-  },
-  {
-    position: 2, name: 'Lápis', price: 4.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2025, 2, 17).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 50
-  },
-  {
-    position: 3, name: 'Biscoito', price: 6.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2024, 8, 6).toLocaleDateString('pt-BR'),
-    perishable: `${true}`, stock: 33
-  },
-  {
-    position: 4, name: 'Pão', price: 5.59.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2024, 4, 5).toLocaleDateString('pt-BR'),
-    perishable: `${true}`, stock: 200
-  },
-  {
-    position: 5, name: 'Bacon', price: 10.89.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2024, 7, 19).toLocaleDateString('pt-BR'),
-    perishable: `${true}`, stock: 20
-  },
-  {
-    position: 6, name: 'Lasanha', price: 20.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2024, 9, 24).toLocaleDateString('pt-BR'),
-    perishable: `${true}`, stock: 25
-  },
-  {
-    position: 7, name: 'Panela', price: 49.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2025, 1, 30).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 15
-  },
-  {
-    position: 8, name: 'Mesa', price: 199.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2025, 12, 25).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 12
-  },
-  {
-    position: 9, name: 'Celular', price: 2199.00.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2025, 11, 22).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 8
-  },
-  {
-    position: 10, name: 'Macarrão', price: 5.99.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }), validity: new Date(2024, 10, 5).toLocaleDateString('pt-BR'),
-    perishable: `${false}`, stock: 40
-  },
+
 ];
 @Component({
   selector: 'app-home',
